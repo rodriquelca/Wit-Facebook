@@ -109,7 +109,6 @@ app.post('/webhook', (req, res) => {
 
       // We received a text message
 
-      let tplObj = _.find(config, function (o) { return o.message === text});
 
       // Let's forward the message to the Wit.ai Bot Engine
       // This will run all actions until our bot has nothing left to do
