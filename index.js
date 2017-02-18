@@ -26,13 +26,13 @@ const PORT = process.env.PORT || 8445;
 // This will contain all user sessions.
 // Each session has an entry:
 // sessionId -> {fbid: facebookUserId, context: sessionState}
-const sessions = {};
+
 
 const findOrCreateSession = (fbid) => {
   let sessionId;
   // Let's see if we already have a session for the user fbid
-  Object.keys(sessions).forEach(k => {
-    if (sessions[k].fbid === fbid) {
+  Object.keys(Config.sessions).forEach(k => {
+    if (Config.sessions[k].fbid === fbid) {
       // Yep, got it!
       sessionId = k;
     }
@@ -40,7 +40,7 @@ const findOrCreateSession = (fbid) => {
   if (!sessionId) {
     // No session found for user fbid, let's create a new one
     sessionId = new Date().toISOString();
-    sessions[sessionId] = {
+    Config.sessions[sessionId] = {
       fbid: fbid,
       context: {
         _fbid_: fbid
@@ -81,7 +81,7 @@ app.post('/webhook', (req, res) => {
   const messaging = FB.getFirstMessagingEntry(req.body);
 
   if (messaging && messaging.message) {
-   console.log ('messaging.message' + messaging.message);
+   console.log ('messaging.message' + messaging.message)
     // Yay! We got a new message!
 
     // We retrieve the Facebook user ID of the sender
@@ -111,7 +111,7 @@ app.post('/webhook', (req, res) => {
       wit.runActions(
         sessionId, // the user's current session
         msg, // the user's message 
-        sessions[sessionId].context, // the user's current session state
+        Config.sessions[sessionId].context, // the user's current session state
         (error, context) => {
           if (error) {
             console.log('Oops! Got an error from Wit:', error);
