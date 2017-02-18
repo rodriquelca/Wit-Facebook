@@ -1,6 +1,6 @@
 'use strict';
 
-// Weather Example
+// Weather Example testing  
 // See https://wit.ai/sungkim/weather/stories and https://wit.ai/docs/quickstart
 const Wit = require('node-wit').Wit;
 const FB = require('./facebook.js');
