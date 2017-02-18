@@ -13,9 +13,11 @@ var FB_VERIFY_TOKEN = process.env.FB_VERIFY_TOKEN;
 if (!FB_VERIFY_TOKEN) {
   FB_VERIFY_TOKEN = "just_do_it";
 }
+const sessions = {};
 
 module.exports = {
   WIT_TOKEN: WIT_TOKEN,
   FB_PAGE_TOKEN: FB_PAGE_TOKEN,
   FB_VERIFY_TOKEN: FB_VERIFY_TOKEN,
+  sessions: sessions
 };
