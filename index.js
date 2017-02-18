@@ -6,6 +6,7 @@
 // * a Messenger Platform setup (https://developers.facebook.com/docs/messenger-platform/quickstart)
 // You need to `npm install` the following dependencies: body-parser, express, request.
 //
+//server requirements
 const bodyParser = require('body-parser');
 const express = require('express');
 
@@ -78,8 +79,9 @@ app.get('/webhook', (req, res) => {
 app.post('/webhook', (req, res) => {
   // Parsing the Messenger API response
   const messaging = FB.getFirstMessagingEntry(req.body);
-  if (messaging && messaging.message) {
 
+  if (messaging && messaging.message) {
+   console.log ('messaging.message' + messaging.message);
     // Yay! We got a new message!
 
     // We retrieve the Facebook user ID of the sender
