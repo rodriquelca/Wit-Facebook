@@ -1,0 +1,10 @@
+[
+  {
+      "file": "listTpl",
+      "message": "show me the enabled users"
+  },
+  {
+      "file": "processTpl",
+      "message": "I want to see all"
+  }
+]
