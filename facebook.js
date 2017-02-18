@@ -17,25 +17,6 @@ const fbReq = request.defaults({
   },
 });
 
-
-// const fbMessage = (recipientId, msg, cb) => {
-//   const opts = {
-//     form: {
-//       recipient: {
-//         id: recipientId,
-//       },
-//       message: {
-//         text: msg,
-//       },
-//     },
-//   };
-
-//   fbReq(opts, (err, resp, data) => {
-//     if (cb) {
-//       cb(err || data.error && data.error.message, data);
-//     }
-//   });
-// };
 // ----------------------------------------------------------------------------
 // Messenger API specific code
 
