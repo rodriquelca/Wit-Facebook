@@ -141,7 +141,9 @@ app.post('/webhook', (req, res) => {
       }
     }
   };
-  
+  const recipientId = Config.sessions[sessionId].fbid;
+  FB.fbMessageTPL(recipientId, tpl);
+
       } else {
           // Let's forward the message to the Wit.ai Bot Engine
           // This will run all actions until our bot has nothing left to do
