@@ -78,12 +78,7 @@ const actions = {
     //   delete context.forecast;
     // }
     // return context;
-      return new Promise(function(resolve, reject) {
-      // Here should go the api call, e.g.:
-      // context.forecast = apiCall(context.loc)
-      context.forecast = 'sunny';
-      return resolve(context);
-    });
+    
   },
 
   getTemplate({context, entities}) {
@@ -102,6 +97,7 @@ const actions = {
     // console.log('---all has been finixed---');
     // console.log(context.template);
     // return context;
+  }
    
 };
 
