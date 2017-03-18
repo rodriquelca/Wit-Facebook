@@ -5,7 +5,7 @@ let Processmaker = {
     connect: function (config, cb) {
         root = this
         this.url = config.PM_URL
-        request.post(this.url + '/oauth/access_token')
+        request.post(this.url + '/'+config.PM_WORKSPACE +'/oauth2/token')
             .send({
                 grant_type: 'password',
                 client_id: config.PM_CLIENT_ID,
@@ -15,8 +15,10 @@ let Processmaker = {
             })
             .end(function (err, res) {
                 if (err || !res.ok) {
+                    console.log(err);
                     console.log('ERROR');
                 } else {
+                    console.log('test')
                     root.access_token = res.body.access_token
                     cb(res.body.access_token)
                 }
@@ -24,7 +26,8 @@ let Processmaker = {
     },
     getProcessList: function (cb) {
         if (this.access_token !== '') {
-            request.get(this.url + '/api/v1/processes')
+            console.log('has tocken');
+            request.get(config.PM_URL + '/api/1.0/' + config.PM_WORKSPACE + '/light/start-case')
                 .set('Authorization', 'Bearer ' + this.access_token)
                 .end(function (err, res) {
                     if (err || !res.ok) {

@@ -1,25 +1,25 @@
 
 
 const _ = require('lodash');
-weatherServer = require('../connectors/weatherServer.js') // need to change if we use processmakaer 
+PM = require('../connectors/processmaker.js') // need to change if we use processmakaer 
 config = require('../processmaker.json')
 /**
  * gets the weather
  */
-const getWeather = (id, cb) => {
+const getList = (id, cb) => {
     var tpl;
     // console.log('asdas');
     // connecto to requiered services
-    weatherServer.connect(config, function (res) {
+    PM.connect(config, function (res) {
         /************** HERE WE CAN CONNECT *********+ */
-        // console.log('test call');
-        weatherServer.getForecast(function (res) {
-            //     console.log(res);
-            //     tpl = res;
-            // console.log('respuesta del server');
-            // console.log(res);
-            tpl = processTpl(res);
-            cb(tpl);
+        console.log('connecte to server success');
+        PM.getProcessList(function (res) {
+        //     //     console.log(res);
+        //     //     tpl = res;
+             console.log('respuesta del server');
+             console.log(res);
+        //     tpl = processTpl(res);
+             cb(tpl);
         });
     });
 };
@@ -62,7 +62,10 @@ var processTpl = (res) => {
     // console.log(tpl);
     return tpl;
 };
-
+console.log('connect to pm');
+getList(0, function() {
+    console.log('finiches');
+});
 module.exports = {
-    getWeather: getWeather
+    getList: getList
 };

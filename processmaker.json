@@ -1,7 +1,8 @@
 {
-    "PM_URL" : "localhost:3000",
-    "PM_CLIENT_ID" : "2",
-    "PM_CLIENT_SECRET" : "eGVLVooooza3sc4tGmhXgKmLcYntG4pA1azq77wu",
-    "PM_USERNAME" : "ronald.otn@gmail.com",
-    "PM_PASSWORD" : "123456"
+    "PM_URL" : "https://fdec5030.ngrok.io",
+    "PM_CLIENT_ID" : "x-pm-local-client",
+   "PM_CLIENT_SECRET" : "179ad45c6ce2cb97cf1029e212046e81",
+    "PM_USERNAME" : "admin",
+    "PM_PASSWORD" : "admin",
+    "PM_WORKSPACE": "workflow"
 }
