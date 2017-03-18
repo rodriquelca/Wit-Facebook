@@ -65,11 +65,11 @@ var processTplList = (res) => {
     // console.log(tpl);
     return tpl;
 };
-console.log('connect to pm');
-getProcessList(0, function (tpl) {
-    console.log('finiches');
-    console.log(tpl);
-});
+// console.log('connect to pm');
+// getProcessList(0, function (tpl) {
+//     console.log('finiches');
+//     console.log(tpl);
+// });
 module.exports = {
     getProcessList: getProcessList
 };
