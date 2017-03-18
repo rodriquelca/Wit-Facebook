@@ -12,6 +12,10 @@ const express = require('express');
 const Config = require('./const.js');
 const msgManager= require('./msgManager.js');
 
+// Webserver parameter
+const PORT = process.env.PORT || 8445;
+
+
 // Starting our webserver and putting it all together
 const app = express();
 app.set('port', PORT);
@@ -33,7 +37,7 @@ app.get('/webhook', (req, res) => {
     req.query['hub.verify_token'] === Config.FB_VERIFY_TOKEN) {
     res.send(req.query['hub.challenge']);
   } else {
-    res.sendStatus(400);
+   res.sendStatus(400);
   }
 });
 
