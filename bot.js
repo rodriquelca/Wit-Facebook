@@ -89,7 +89,7 @@ const actions = {
       // context.template = JSON.stringify(tpl); // we should call a weather API here
       console.log('init the process');
       console.log('data----->');
-      result = factory.getWeather;
+      var result = factory.getWeather;
       console.log(result);
       context.template = JSON.stringify(result);
     }
