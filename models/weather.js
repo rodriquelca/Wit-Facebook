@@ -12,14 +12,14 @@ const getWeather = (id, cb) => {
     // connecto to requiered services
     weatherServer.connect(config, function (res) {
         /************** HERE WE CAN CONNECT *********+ */
-        console.log('test call');
+        // console.log('test call');
         weatherServer.getForecast(function (res) {
             //     console.log(res);
             //     tpl = res;
-            console.log('respuesta del server');
-            console.log(res);
+            // console.log('respuesta del server');
+            // console.log(res);
             tpl = processTpl(1);
-            cb(tpl);
+            cb(null, tpl);
         });
     })
 
