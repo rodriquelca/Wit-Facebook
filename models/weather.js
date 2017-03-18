@@ -19,7 +19,7 @@ const getWeather = (id, cb) => {
             // console.log('respuesta del server');
             // console.log(res);
             tpl = processTpl(1);
-            cb(null, tpl);
+            cb(tpl);
         });
     });
 };
