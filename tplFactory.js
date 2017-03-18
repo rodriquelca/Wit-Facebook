@@ -20,6 +20,6 @@ function  testWaitFunction(){
 // console.log('after launch');
 
 module.exports = {
-	getWeather: testWaitFunction
+	getWeather: wait.launchFiber(testWaitFunction)
     // facker: facker.getFacker
 }
