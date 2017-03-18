@@ -23,54 +23,41 @@ const getProcessList = (id, cb) => {
 };
 
 var processTplList = (res) => {
-    // console.log('into de template');
-    // console.log(res);
+    console.log('into de template');
+    console.log(res);
+    var elements = [];
+    var process;
+    for (let i = 0; i < res.length; i += 1) {
+        process = res[i];
+        console.log('dasd');
+        console.log(process);
+        elements.push(
+            {
+                "title": process.text,
+                "image_url": "https://www.processmaker.com/sites/all/themes/pmthemev2/img/white-badge.png",
+                "subtitle": 'user2@aa.com',
+                "buttons": [
+                    {
+                        "type": "postback",
+                        "title": "Start Process",
+                        "payload": "Payload for start the process"
+                    },
+                    {
+                        "type": "postback",
+                        "title": "View details",
+                        "payload": "hello Processmaker",
+
+                    }]
+            }
+        );
+    }
 
     let tpl = {
         "attachment": {
             "type": "template",
             "payload": {
-                "template_type": "list",
-                "elements": [
-                    {
-                        "title": 'title 1 sdsd',
-                        "image_url": "https://www.processmaker.com/sites/all/themes/pmthemev2/img/white-badge.png",
-                        "subtitle": 'user2@aa.com',
-                        "buttons": [
-                            {
-                                "title": "View Details",
-                                "type": "web_url",
-                                "url": "https://processmaker.com",
-                                //"messenger_extensions": true,
-                                "webview_height_ratio": "tall"
-                                //"fallback_url": "https://processmaker.com"
-                            }
-                        ]
-                    },
-                    {
-                        "title": 'title 2',
-                        "image_url": "https://www.processmaker.com/sites/all/themes/pmthemev2/img/white-badge.png",
-                        "subtitle": 'user2@aa.com',
-                        "buttons": [
-                            {
-                                "title": "View Details",
-                                "type": "web_url",
-                                "url": "https://processmaker.com",
-                                //"messenger_extensions": true,
-                                "webview_height_ratio": "tall"
-                                //"fallback_url": "https://processmaker.com"
-                            }
-                        ]
-                    }
-                ],
-
-                "buttons": [
-                    {
-                        "title": "View More",
-                        "type": "postback",
-                        "payload": "payload"
-                    }
-                ]
+                "template_type": "generic",
+                "elements": elements
             }
         }
     };
