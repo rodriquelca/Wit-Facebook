@@ -62,7 +62,7 @@ const actions = {
       delete context.forecast;
     }
     return context;
-  }
+  },
   getTemplate({context, entities}) {
     // var location = firstEntityValue(entities, 'location');
     // if (location) {
