@@ -7,7 +7,7 @@ const {Wit, log} = require('node-wit');
 const {interactive} = require('node-wit');
 const FB = require('./facebook.js');
 const Config = require('./const.js');
-const tplManager = require('./tplManager');
+const tplManager = require('./tplManager.js');
 
 
 const firstEntityValue = (entities, entity) => {
@@ -85,11 +85,6 @@ const actions = {
     if (ordinal) {
       let tpl  = tplManager.get(ordinal);
       context.template = JSON.stringify(tpl); // we should call a weather API here
-
-      delete context.missingLocation;
-    } else {
-      context.missingLocation = true;
-      delete context.forecast;
     }
     return context;
   }
