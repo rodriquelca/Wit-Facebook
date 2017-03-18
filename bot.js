@@ -112,17 +112,12 @@ const actions = {
     // console.log(context.template);
     // return context;
     return new Promise(function (resolve, reject) {
-      var location = firstEntityValue(entities, 'location');
-      if (location) {
-        context.forecast = 'sunny in ' + location; // we should call a weather API here
-        delete context.missingLocation;
-      } else {
-        context.missingLocation = true;
-        delete context.forecast;
-      }
+      var ordinal = firstEntityValue(entities, 'ordinal');
+  
+      var result = factory.getWeather;
       // Here should go the api call, e.g.:
-      // context.forecast = apiCall(context.loc)
-      context.forecast = 'sunny';
+      context.template = JSON.stringify(result)
+      // context.forecast = 'sunny';
       return resolve(context);
     });
   }
