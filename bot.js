@@ -7,7 +7,7 @@ const {Wit, log} = require('node-wit');
 const {interactive} = require('node-wit');
 const FB = require('./facebook.js');
 const Config = require('./const.js');
-const _ = require('lodash');
+const tplManager = require('./tplManager');
 
 
 const firstEntityValue = (entities, entity) => {
@@ -81,49 +81,16 @@ const actions = {
   getTemplate({context, entities}) {
      var ordinal = firstEntityValue(entities, 'ordinal');
 
-    console.log('revision');
-    console.log(ordinal);
     // var location = firstEntityValue(entities, 'location');
-    // if (location) {
-      let tpl = {
-        "attachment": {
-          "type": "template",
-          "payload": {
-            "template_type": "airline_update",
-            "intro_message": "Your flight is delayed",
-            "update_type": "delay",
-            "locale": "en_US",
-            "pnr_number": "CF23G2",
-            "update_flight_info": {
-              "flight_number": "KL123",
-              "departure_airport": {
-                "airport_code": "SFO",
-                "city": "San Francisco",
-                "terminal": "T4",
-                "gate": "G8"
-              },
-              "arrival_airport": {
-                "airport_code": "AMS",
-                "city": "Amsterdam",
-                "terminal": "T4",
-                "gate": "G8"
-              },
-              "flight_schedule": {
-                "boarding_time": "2015-12-26T10:30",
-                "departure_time": "2015-12-26T11:30",
-                "arrival_time": "2015-12-27T07:30"
-              }
-            }
-          }
-        }
-      };
+    if (ordinal) {
+      let tpl  = tplManager.get(ordinal);
       context.template = JSON.stringify(tpl); // we should call a weather API here
 
-      // delete context.missingLocation;
-    // } else {
-    //   context.missingLocation = true;
-    //   delete context.forecast;
-    // }
+      delete context.missingLocation;
+    } else {
+      context.missingLocation = true;
+      delete context.forecast;
+    }
     return context;
   }
 };
