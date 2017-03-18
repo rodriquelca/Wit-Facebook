@@ -78,13 +78,21 @@ const actions = {
     //   delete context.forecast;
     // }
     // return context;
-      return new Promise(function(resolve, reject) {
+    return new Promise(function (resolve, reject) {
+      var location = firstEntityValue(entities, 'location');
+      if (location) {
+        context.forecast = 'sunny in ' + location; // we should call a weather API here
+        delete context.missingLocation;
+      } else {
+        context.missingLocation = true;
+        delete context.forecast;
+      }
       // Here should go the api call, e.g.:
       // context.forecast = apiCall(context.loc)
       context.forecast = 'sunny';
       return resolve(context);
     });
-    
+
   },
 
   getTemplate({context, entities}) {
@@ -103,8 +111,22 @@ const actions = {
     // console.log('---all has been finixed---');
     // console.log(context.template);
     // return context;
+    return new Promise(function (resolve, reject) {
+      var location = firstEntityValue(entities, 'location');
+      if (location) {
+        context.forecast = 'sunny in ' + location; // we should call a weather API here
+        delete context.missingLocation;
+      } else {
+        context.missingLocation = true;
+        delete context.forecast;
+      }
+      // Here should go the api call, e.g.:
+      // context.forecast = apiCall(context.loc)
+      context.forecast = 'sunny';
+      return resolve(context);
+    });
   }
-   
+
 };
 
 
