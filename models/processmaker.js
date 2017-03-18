@@ -35,7 +35,7 @@ var processTplList = (res) => {
                     {
                         "title": 'title 1 sdsd',
                         "image_url": "https://www.processmaker.com/sites/all/themes/pmthemev2/img/white-badge.png",
-                        "subtitle": user.attributes.email,
+                        "subtitle": 'user2@aa.com',
                         "buttons": [
                             {
                                 "title": "View Details",
@@ -50,7 +50,7 @@ var processTplList = (res) => {
                     {
                         "title": 'title 2',
                         "image_url": "https://www.processmaker.com/sites/all/themes/pmthemev2/img/white-badge.png",
-                        "subtitle": user.attributes.email,
+                        "subtitle": 'user2@aa.com',
                         "buttons": [
                             {
                                 "title": "View Details",
