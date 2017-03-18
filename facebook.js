@@ -23,31 +23,11 @@ const fbReq = request.defaults({
 // See the Send API reference
 // https://developers.facebook.com/docs/messenger-platform/send-api-reference
 
-const fbMessage = (id, text) => {
+const fbMessage = (id, text, hasTpl) => {
   console.log('el id es el siguiente: ' +id)
   const body = JSON.stringify({
     recipient: { id },
-    message: { text },
-  }); 
-  const qs = 'access_token=' + encodeURIComponent(Config.FB_PAGE_TOKEN);
-  return fetch('https://graph.facebook.com/me/messages?' + qs, {
-    method: 'POST',
-    headers: {'Content-Type': 'application/json'},
-    body,
-  })
-  .then(rsp => rsp.json())
-  .then(json => {
-    if (json.error && json.error.message) {
-      throw new Error(json.error.message);
-    }
-    return json;
-  });
-};
-const fbMessageTPL = (id, text) => {
-  console.log('el id es el siguiente: ' +id)
-  const body = JSON.stringify({
-    recipient: { id },
-    message:  text ,
+    message: hasTpl ? text: { text },
   }); 
   const qs = 'access_token=' + encodeURIComponent(Config.FB_PAGE_TOKEN);
   return fetch('https://graph.facebook.com/me/messages?' + qs, {
@@ -84,6 +64,5 @@ const getFirstMessagingEntry = (body) => {
 module.exports = {
   getFirstMessagingEntry: getFirstMessagingEntry,
   fbMessage: fbMessage,
-  fbMessageTPL:fbMessageTPL,
   fbReq: fbReq
 };
