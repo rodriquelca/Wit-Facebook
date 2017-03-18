@@ -12,12 +12,12 @@ function  testWaitFunction(){
     var result = wait.for(wheather.getWeather, 0);
     console.log('function returned:', result);
     console.log('fiber end');
+    return result;
 };
 
 // console.log('app start');
 // wait.launchFiber(testWaitFunction);
 // console.log('after launch');
-
 
 module.exports = {
 	getWeather: wait.launchFiber(testWaitFunction)
