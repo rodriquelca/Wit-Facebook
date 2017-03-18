@@ -96,28 +96,11 @@ const actions = {
   },
 
   getTemplate({context, entities}) {
-    // var ordinal = firstEntityValue(entities, 'ordinal');
-
-    // // var location = firstEntityValue(entities, 'location');
-    // if (ordinal) {
-    //    tpl 
-    //   // context.template = JSON.stringify(tpl); // we should call a weather API here
-    //   console.log('init the process');
-    //   console.log('data----->');
-    //   // var result = factory.getWeather;
-    //   console.log(result);
-    //   context.template = JSON.stringify(result);
-    // }
-    // console.log('---all has been finixed---');
-    // console.log(context.template);
-    // return context;
     return new Promise(function (resolve, reject) {
       var ordinal = firstEntityValue(entities, 'ordinal');
   
       var result = factory.getWeather(0, function(tpl){
-         context.template = JSON.stringify(tpl)
-        
-        // return tpl;
+         context.template = JSON.stringify(tpl);
       });
       console.log('data');
       console.log(context.template );
