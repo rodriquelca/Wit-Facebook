@@ -84,7 +84,7 @@ const actions = {
       context.forecast = 'sunny';
       return resolve(context);
     });
-  }
+  
   },
 
   getTemplate({context, entities}) {
