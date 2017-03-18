@@ -39,6 +39,6 @@ app.get('/webhook', (req, res) => {
 
 // The main message handler
 app.post('/webhook', (req, res) => {
-  msgMagager.msgProcess(req, res);
+  msgManager.msgProcess(req, res);
   res.sendStatus(200);
 });
