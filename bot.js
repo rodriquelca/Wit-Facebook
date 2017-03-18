@@ -64,7 +64,7 @@ const actions = {
     return context;
   },
   getTemplate({context, entities}) {
-     var ordinal = firstEntityValue(context, 'ordinal');
+     var ordinal = firstEntityValue(entities, 'ordinal');
     console.log('revision');
     console.log(ordinal);
     // var location = firstEntityValue(entities, 'location');
