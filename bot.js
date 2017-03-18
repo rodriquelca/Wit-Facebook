@@ -40,9 +40,8 @@ const actions = {
         var text = JSON.parse(text);
         let hasTpl = true;
       } else {
-
         //the json is not ok
-         hasTpl = false;
+         let hasTpl = false;
       }
       
       // Yay, we found our recipient!
