@@ -88,7 +88,7 @@ const actions = {
       console.log('init the process');
       var result = factory.getWeather(0, function (tpl) {
         
-        context.template = template
+        context.template = tpl
           console.log('---all has been finixed---');
       console.log(context.template);
       return context;
