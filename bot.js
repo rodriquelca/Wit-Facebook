@@ -7,7 +7,7 @@ const {Wit, log} = require('node-wit');
 const {interactive} = require('node-wit');
 const FB = require('./facebook.js');
 const Config = require('./const.js');
-const tplManager = require('./tplManager.js');
+const factory = require('./tplFactory.js');
 
 
 const firstEntityValue = (entities, entity) => {
@@ -30,7 +30,7 @@ const actions = {
     console.log(Config.sessions);
     const recipientId = Config.sessions[sessionId].fbid;
     let hasTpl = false;
-    
+
     if (recipientId) {
       // validating if has Tpl
       if (/^[\],:{}\s]*$/.test(text.replace(/\\["\\\/bfnrtu]/g, '@').
@@ -42,9 +42,9 @@ const actions = {
         hasTpl = true;
       } else {
         //the json is not ok
-         hasTpl = false;
+        hasTpl = false;
       }
-      
+
       // Yay, we found our recipient!
       // Let's forward our bot response to her.
       // We return a promise to let our bot know when we're done sending
@@ -66,7 +66,7 @@ const actions = {
   },
   // You should implement your custom actions here
   // See https://wit.ai/docs/quickstart
-   getForecast({context, entities}) {
+  getForecast({context, entities}) {
     var location = firstEntityValue(entities, 'location');
     if (location) {
       context.forecast = 'sunny in ' + location; // we should call a weather API here
@@ -79,13 +79,20 @@ const actions = {
   },
 
   getTemplate({context, entities}) {
-     var ordinal = firstEntityValue(entities, 'ordinal');
+    var ordinal = firstEntityValue(entities, 'ordinal');
 
     // var location = firstEntityValue(entities, 'location');
     if (ordinal) {
-      let tpl  = tplManager.get(ordinal);
-      context.template = JSON.stringify(tpl); // we should call a weather API here
+
+      // context.template = JSON.stringify(tpl); // we should call a weather API here
+      console.log('init the process');
+      var result = factory.getWeather(0, function (tpl) {
+        
+        context.template = template
+      });
     }
+    console.log('---all has been finixed---');
+    console.log(context.template);
     return context;
   }
 };
