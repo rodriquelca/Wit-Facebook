@@ -8,6 +8,8 @@ const {interactive} = require('node-wit');
 const FB = require('./facebook.js');
 const Config = require('./const.js');
 const factory = require('./tplFactory.js');
+var wait = require('wait.for');
+
 
 
 const firstEntityValue = (entities, entity) => {
@@ -87,8 +89,9 @@ const actions = {
       // context.template = JSON.stringify(tpl); // we should call a weather API here
       console.log('init the process');
       console.log('data----->');
-      console.log(factory.getWeather);
-      context.template = JSON.stringify(factory.getWeather);
+      result = wait.launchFiber(factory.getWeather);
+      console.log(result);
+      context.template = JSON.stringify(result);
     }
     console.log('---all has been finixed---');
     console.log(context.template);
