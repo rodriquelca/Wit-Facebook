@@ -29,6 +29,7 @@ const actions = {
     console.log('---session----');
     console.log(Config.sessions);
     const recipientId = Config.sessions[sessionId].fbid;
+    let hasTpl = false;
     
     if (recipientId) {
       // validating if has Tpl
@@ -38,10 +39,10 @@ const actions = {
 
         //the json is ok
         var text = JSON.parse(text);
-        let hasTpl = true;
+        hasTpl = true;
       } else {
         //the json is not ok
-         let hasTpl = false;
+         hasTpl = false;
       }
       
       // Yay, we found our recipient!
