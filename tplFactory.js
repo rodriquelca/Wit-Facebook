@@ -16,5 +16,5 @@ var wait = require('wait.for');
 module.exports = {
 	getWeather: wheather.getWeather,
     facker: facker.getFacker,
-    processmaker: processmaker.getProcessList
+    getProcessList: processmaker.getProcessList
 }
