@@ -9,6 +9,7 @@
 //server requirements
 const bodyParser = require('body-parser');
 const express = require('express');
+onst Config = require('./const.js');
 const msgManager= require('./msgManager.js');
 
 // Starting our webserver and putting it all together
