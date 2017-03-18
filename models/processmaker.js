@@ -1,12 +1,12 @@
 
 
 const _ = require('lodash');
-PM = require('../connectors/processmaker.js') // need to change if we use processmakaer 
+PM = require('../connectors/fackerServer.js') // need to change if we use processmakaer 
 config = require('../processmaker.json')
 /**
  * gets the weather
  */
-const getList = (id, cb) => {
+const getProcessList = (id, cb) => {
     var tpl;
     // console.log('asdas');
     // connecto to requiered services
@@ -14,47 +14,63 @@ const getList = (id, cb) => {
         /************** HERE WE CAN CONNECT *********+ */
         console.log('connecte to server success');
         PM.getProcessList(function (res) {
-        //     //     console.log(res);
-        //     //     tpl = res;
-             console.log('respuesta del server');
-             console.log(res);
-        //     tpl = processTpl(res);
-             cb(tpl);
+            // console.log('respuesta del server');
+            //  console.log(res);
+            tpl = processTplList(res);
+            cb(tpl);
         });
     });
 };
 
-var processTpl = (res) => {
+var processTplList = (res) => {
+    // console.log('into de template');
+    // console.log(res);
 
     let tpl = {
         "attachment": {
             "type": "template",
             "payload": {
-                "template_type": "airline_update",
-                "intro_message": "Your flight is delayed",
-                "update_type": "delay",
-                "locale": "en_US",
-                "pnr_number": "CF23G2",
-                "update_flight_info": {
-                    "flight_number": "KL123",
-                    "departure_airport": {
-                        "airport_code": "SFO",
-                        "city": "San Francisco",
-                        "terminal": "T4",
-                        "gate": "G8"
+                "template_type": "list",
+                "elements": [
+                    {
+                        "title": 'title 1',
+                        "image_url": "https://www.processmaker.com/sites/all/themes/pmthemev2/img/white-badge.png",
+                        "subtitle": user.attributes.email,
+                        "buttons": [
+                            {
+                                "title": "View Details",
+                                "type": "web_url",
+                                "url": "https://processmaker.com",
+                                //"messenger_extensions": true,
+                                "webview_height_ratio": "tall"
+                                //"fallback_url": "https://processmaker.com"
+                            }
+                        ]
                     },
-                    "arrival_airport": {
-                        "airport_code": "AMS",
-                        "city": "Amsterdam",
-                        "terminal": "T4",
-                        "gate": "G8"
-                    },
-                    "flight_schedule": {
-                        "boarding_time": "2015-12-26T10:30",
-                        "departure_time": "2015-12-26T11:30",
-                        "arrival_time": "2015-12-27T07:30"
+                    {
+                        "title": 'title 2',
+                        "image_url": "https://www.processmaker.com/sites/all/themes/pmthemev2/img/white-badge.png",
+                        "subtitle": user.attributes.email,
+                        "buttons": [
+                            {
+                                "title": "View Details",
+                                "type": "web_url",
+                                "url": "https://processmaker.com",
+                                //"messenger_extensions": true,
+                                "webview_height_ratio": "tall"
+                                //"fallback_url": "https://processmaker.com"
+                            }
+                        ]
                     }
-                }
+                ],
+
+                "buttons": [
+                    {
+                        "title": "View More",
+                        "type": "postback",
+                        "payload": "payload"
+                    }
+                ]
             }
         }
     };
@@ -63,9 +79,10 @@ var processTpl = (res) => {
     return tpl;
 };
 console.log('connect to pm');
-getList(0, function() {
+getProcessList(0, function (tpl) {
     console.log('finiches');
+    console.log(tpl);
 });
 module.exports = {
-    getList: getList
+    getProcessList: getProcessList
 };

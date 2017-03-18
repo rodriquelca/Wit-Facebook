@@ -1,5 +1,5 @@
 {
-    "PM_URL" : "https://fdec5030.ngrok.io",
+    "PM_URL" : "localhost:3000",
     "PM_CLIENT_ID" : "x-pm-local-client",
    "PM_CLIENT_SECRET" : "179ad45c6ce2cb97cf1029e212046e81",
     "PM_USERNAME" : "admin",

@@ -1,5 +1,6 @@
 var wheather = require('./models/weather');
 var facker = require('./models/facker');
+var processmaker = require('./models/processmaker');
 var wait = require('wait.for');
 
 /**
@@ -13,6 +14,7 @@ var wait = require('wait.for');
         return tpl;
       });
 module.exports = {
-	getWeather: wheather.getWeather
-    // facker: facker.getFacker
+	getWeather: wheather.getWeather,
+    facker: facker.getFacker,
+    processmaker: processmaker.getProcessList
 }

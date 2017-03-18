@@ -98,7 +98,7 @@ const actions = {
   getTemplate({context, entities}) {
     return new Promise(function (resolve, reject) {
       var ordinal = firstEntityValue(entities, 'ordinal');
-  
+      
       var result = factory.getWeather(0, function(tpl){
          context.template = JSON.stringify(tpl);
       });
@@ -106,7 +106,25 @@ const actions = {
       console.log(context.template );
       return resolve(context);
     });
+  },
+  /** Gets the processList */
+  
+  getProcessList({context, entities}) {
+    return new Promise(function (resolve, reject) {
+      var ordinal = firstEntityValue(entities, 'ordinal');
+      
+      var result = factory.getProcessList(0, function(tpl){
+         context.template = JSON.stringify(tpl);
+      });
+      
+      console.log('data');
+      console.log(context.template );
+      return resolve(context);
+    });
   }
+  /**
+   * here we can extend all with requests
+   */
 
 };
 

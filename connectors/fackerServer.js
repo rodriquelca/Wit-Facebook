@@ -43,6 +43,23 @@ let facker = {
         //     console.log('NOT AUTHORIZED')
         // }
     },
+    getProcessList: function (cb) {
+
+        // if (this.access_token !== '') {
+        console.log(this.url);
+        request.get(this.url + '/processList')
+            // .set('Authorization', 'Bearer ' + this.access_token)
+            .end(function (err, res) {
+                if (err || !res.ok) {
+                    console.log('ERROR');
+                } else {
+                    cb(res.body)
+                }
+            })
+        // } else {
+        //     console.log('NOT AUTHORIZED')
+        // }
+    },
 }
 
 module.exports = facker
