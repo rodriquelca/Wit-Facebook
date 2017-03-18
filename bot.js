@@ -69,34 +69,41 @@ const actions = {
   // You should implement your custom actions here
   // See https://wit.ai/docs/quickstart
   getForecast({context, entities}) {
-    var location = firstEntityValue(entities, 'location');
-    if (location) {
-      context.forecast = 'sunny in ' + location; // we should call a weather API here
-      delete context.missingLocation;
-    } else {
-      context.missingLocation = true;
-      delete context.forecast;
-    }
-    return context;
+    // var location = firstEntityValue(entities, 'location');
+    // if (location) {
+    //   context.forecast = 'sunny in ' + location; // we should call a weather API here
+    //   delete context.missingLocation;
+    // } else {
+    //   context.missingLocation = true;
+    //   delete context.forecast;
+    // }
+    // return context;
+     return new Promise(function(resolve, reject) {
+      // Here should go the api call, e.g.:
+      // context.forecast = apiCall(context.loc)
+      context.forecast = 'sunny';
+      return resolve(context);
+    });
+  }
   },
 
   getTemplate({context, entities}) {
-    var ordinal = firstEntityValue(entities, 'ordinal');
+    // var ordinal = firstEntityValue(entities, 'ordinal');
 
-    // var location = firstEntityValue(entities, 'location');
-    if (ordinal) {
-
-      // context.template = JSON.stringify(tpl); // we should call a weather API here
-      console.log('init the process');
-      console.log('data----->');
-      var result = factory.getWeather;
-      console.log(result);
-      context.template = JSON.stringify(result);
-    }
-    console.log('---all has been finixed---');
-    console.log(context.template);
-    return context;
-  }
+    // // var location = firstEntityValue(entities, 'location');
+    // if (ordinal) {
+    //    tpl 
+    //   // context.template = JSON.stringify(tpl); // we should call a weather API here
+    //   console.log('init the process');
+    //   console.log('data----->');
+    //   // var result = factory.getWeather;
+    //   console.log(result);
+    //   context.template = JSON.stringify(result);
+    // }
+    // console.log('---all has been finixed---');
+    // console.log(context.template);
+    // return context;
+   
 };
 
 
