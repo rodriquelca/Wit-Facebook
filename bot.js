@@ -31,7 +31,7 @@ const actions = {
     
     if (recipientId) {
       // validating if has Tpl
-      var json = JSON.parse(this.text);
+      var json = JSON.parse(text);
       let hasTpl = json ? true : false;
       // Yay, we found our recipient!
       // Let's forward our bot response to her.
