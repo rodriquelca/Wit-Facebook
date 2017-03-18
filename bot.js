@@ -64,8 +64,8 @@ const actions = {
     return context;
   },
   getTemplate({context, entities}) {
-    
-    console.log(entities[entity][0].value)
+console.log('revision');
+    console.log(entities[entity][0].value);
     // var location = firstEntityValue(entities, 'location');
     // if (location) {
       context.template = 'template XXX1' // we should call a weather API here
