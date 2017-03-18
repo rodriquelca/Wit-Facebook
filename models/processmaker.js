@@ -33,7 +33,7 @@ var processTplList = (res) => {
                 "template_type": "list",
                 "elements": [
                     {
-                        "title": 'title 1',
+                        "title": 'title 1 sdsd',
                         "image_url": "https://www.processmaker.com/sites/all/themes/pmthemev2/img/white-badge.png",
                         "subtitle": user.attributes.email,
                         "buttons": [
