@@ -21,10 +21,7 @@ const getWeather = (id, cb) => {
             tpl = processTpl(1);
             cb(null, tpl);
         });
-    })
-
-    
-    
+    });
 };
 
 var processTpl = (id) => {
