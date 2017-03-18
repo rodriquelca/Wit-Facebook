@@ -119,9 +119,8 @@ const actions = {
         
         // return tpl;
       });
-      // Here should go the api call, e.g.:
-     
-      // context.forecast = 'sunny';
+      console.log('data');
+      console.log(context.template );
       return resolve(context);
     });
   }
