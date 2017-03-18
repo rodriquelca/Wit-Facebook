@@ -89,12 +89,13 @@ const actions = {
       var result = factory.getWeather(0, function (tpl) {
         
         context.template = tpl
-          console.log('---all has been finixed---');
-      console.log(context.template);
-      return context;
+          
+        return context;
       });
     }
-   
+console.log('---all has been finixed---');
+        console.log(context.template);
+   return context;
   }
 };
 
