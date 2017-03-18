@@ -7,6 +7,7 @@ const {Wit, log} = require('node-wit');
 const {interactive} = require('node-wit');
 const FB = require('./facebook.js');
 const Config = require('./const.js');
+const _ = require('lodash');
 
 
 const firstEntityValue = (entities, entity) => {
@@ -31,8 +32,20 @@ const actions = {
     
     if (recipientId) {
       // validating if has Tpl
-      var json = JSON.parse(text);
-      let hasTpl = json ? true : false;
+      if (/^[\],:{}\s]*$/.test(text.replace(/\\["\\\/bfnrtu]/g, '@').
+        replace(/"[^"\\\n\r]*"|true|false|null|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?/g, ']').
+        replace(/(?:^|:|,)(?:\s*\[)+/g, ''))) {
+
+        //the json is ok
+        var text = JSON.parse(text);
+        let hasTpl = true;
+      } else {
+
+        //the json is not ok
+         hasTpl = false;
+      }
+      
+      l
       // Yay, we found our recipient!
       // Let's forward our bot response to her.
       // We return a promise to let our bot know when we're done sending
