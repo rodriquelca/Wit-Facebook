@@ -15,7 +15,7 @@ const bot = require('./bot.js');
 const Config = require('./const.js');
 const FB = require('./facebook.js');
 //here the templates
-const first = require('./tpl/first.js');
+// const first = require('./tpl/first.js');
 
 // Setting up our bot
 const wit = bot.getWit();
