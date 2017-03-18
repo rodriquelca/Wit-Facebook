@@ -115,11 +115,12 @@ const actions = {
       var ordinal = firstEntityValue(entities, 'ordinal');
   
       var result = factory.getWeather(0, function(tpl){
-        console.log(tpl);
-        return tpl;
+         context.template = JSON.stringify(tpl)
+        
+        // return tpl;
       });
       // Here should go the api call, e.g.:
-      context.template = JSON.stringify(result)
+     
       // context.forecast = 'sunny';
       return resolve(context);
     });
