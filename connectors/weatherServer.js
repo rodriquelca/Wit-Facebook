@@ -30,7 +30,7 @@ const weatherServer = {
     getForecast: function (location, cb) {
         console.log(this.url);
         console.log('location: ' + location);
-        weather.find({search: 'El Alto, BO', degreeType: 'C'}, function(err, result) {
+        weather.find({search: location + ', BO', degreeType: 'C'}, function(err, result) {
 
             if(err) console.log(err);
             // console.log(JSON.stringify(result, null, 2));
