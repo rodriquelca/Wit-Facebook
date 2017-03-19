@@ -15,12 +15,12 @@ const getWeather = (id, cb) => {
         // console.log('test call');
         weatherServer.getForecast(function (res) {
    console.log('respuesta del server');
-                console.log(res);
+                // console.log(res);
             //     tpl = res;
          
-            console.log(res[0].current);
+            console.log(res[1].current.temperature);
             // tpl = processTpl(res);
-            cb(res[0].current + 'ºC');
+            cb(res[1].current.temperature + 'ºC');
         });
     });
 };
