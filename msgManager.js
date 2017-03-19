@@ -95,6 +95,7 @@ const msgProcess = (req, res) => {
         }
     } else {
         console.log(req.body);
+        console.log(req.body.messaging);
     }
 }
 
