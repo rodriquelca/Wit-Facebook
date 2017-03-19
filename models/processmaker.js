@@ -31,6 +31,8 @@ var processTplList = (res) => {
         process = res[i];
         console.log('dasd');
         console.log(process);
+        var payload = "startProcess,"+process.text+","+process.processId+","+ process.taskId+","+process.form[0].formID;
+        console.log(payload);
         elements.push(
             {
                 "title": process.text,
@@ -40,7 +42,7 @@ var processTplList = (res) => {
                     {
                         "type": "postback",
                         "title": "Start Process",
-                        "payload": "startProcess,"+process.text+","+process.processId+","+ process.taskId+","+process.form[0].formID,
+                        "payload": payload
                     },
                     {
                         "type": "postback",
