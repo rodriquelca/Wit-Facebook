@@ -81,11 +81,12 @@ const actions = {
     return new Promise(function (resolve, reject) {
       var location = firstEntityValue(entities, 'location');
       if (location) {
-         context.forecast = 'sunny in ' + location; // we should call a weather API here
-        // var result = factory.getWeather(location, function (resp) {
-        // console.log(resp);
-        //   context.forecast = resp;
-        // });
+        //  context.forecast = 'sunny in ' + location; // we should call a weather API here
+        var result = factory.getWeather(location, function (resp) {
+          console.log('test');
+        console.log(resp);
+          context.forecast = resp;
+        });
         delete context.missingLocation;
       } else {
         context.missingLocation = true;
