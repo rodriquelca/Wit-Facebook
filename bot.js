@@ -111,7 +111,6 @@ const actions = {
   
   getProcessList({context, entities}) {
     return new Promise(function (resolve, reject) {
-      var ordinal = firstEntityValue(entities, 'ordinal');
       
       var result = factory.getProcessList(0, function(tpl){
          context.processList = JSON.stringify(tpl);
