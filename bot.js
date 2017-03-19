@@ -74,11 +74,11 @@ const actions = {
       var location = firstEntityValue(entities, 'location');
       // if (location) {
           context.forecast = 'sunny in ' + location; // we should call a weather API here
-        // var result = factory.wheather(0, location, function (resp) {
-        //   console.log('test');
-        //   console.log(resp);
-        //   context.forecast = resp +' ' + location;
-        // });
+        var result = factory.wheather(0, location, function (resp) {
+          console.log('test');
+          console.log(resp);
+          context.forecast = 'sunny in ' + location;
+        });
         // delete context.missingLocation;
       // } 
       console.log('finishe weather');
