@@ -6,7 +6,7 @@ config = require('../processmaker.json')
 /**
  * gets the weather
  */
-const wheather = (id, cb) => {
+const wheather = (config, id, cb) => {
     var tpl;
     // console.log('asdas');
     // connecto to requiered services
