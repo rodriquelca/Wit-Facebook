@@ -34,7 +34,7 @@ var processTplList = (res) => {
         elements.push(
             {
                 "title": process.text,
-                "image_url": "https://www.processmaker.com/sites/all/themes/pmthemev2/img/white-badge.png",
+                "image_url": "https://enterprise.github.com/assets/home/integrations-graphic-751d7041ec159aad4acdf01d30a0685a6be2cf2b76eb2390d69f90e4ff5c67a7.svg",
                 "subtitle": 'user2@aa.com',
                 "buttons": [
                     {
