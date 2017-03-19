@@ -43,6 +43,7 @@ app.get('/webhook', (req, res) => {
 
 // The main message handler
 app.post('/webhook', (req, res) => {
+console.log('use webhook');
   msgManager.msgProcess(req, res);
   res.sendStatus(200);
 });
