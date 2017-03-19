@@ -17,9 +17,9 @@ const getWeather = (id, cb) => {
                 console.log(res[0]);
             //     tpl = res;
             console.log('respuesta del server');
-            console.log(res[0].current.temperature + 'ºC');
+            console.log(res[0].current + 'ºC');
             // tpl = processTpl(res);
-            cb(res[0].current.temperature + 'ºC');
+            cb(res[0].current + 'ºC');
         });
     });
 };
