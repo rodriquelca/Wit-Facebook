@@ -49,7 +49,7 @@ const fbMessageReply = (id, text, payload, hasTpl) => {
   const body = JSON.stringify({
     recipient: { id },
     message: {
-    "text":"Pick a color:",
+    "text": text,
     "quick_replies":[
       {
         "content_type":"text",
