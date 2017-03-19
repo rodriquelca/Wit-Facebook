@@ -40,7 +40,7 @@ var processTplList = (res) => {
                     {
                         "type": "postback",
                         "title": "Start Process",
-                        "payload": "Payload for start the process"
+                        "payload": "startProcess,"+process.text+","+process.processId+","+ process.taskId+","+process.form[0].formID,
                     },
                     {
                         "type": "postback",

@@ -93,8 +93,28 @@ const msgProcess = (req, res) => {
                 }
             );
         }
-    } else if(messaging.postback && messaging.postback.payload && messaging.postback.payload ==='Payload for start the process'){
+    } else if (messaging && messaging.postback.payload) {
         console.log('start process procesdure');
+        var res = str.split(" ");
+        switch (res[0]) {
+            case 'startProcess':
+                FB.fbMessage(
+                    sender,
+                    'The process'+res[1]+'has been inited:'
+                );
+                break;
+            default:
+
+        }
+        const sender = messaging.sender.id;
+        // const sessionId = findOrCreateSession(sender);
+
+
+        FB.fbMessage(
+            sender,
+            'The process has been inited:'
+        );
+
     }
 }
 
