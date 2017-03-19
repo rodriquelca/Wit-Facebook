@@ -94,8 +94,8 @@ console.log(messaging);
             );
         }
     } else if (messaging && messaging.postback.payload) {
-        console.log('start process procesdure');
-        console.log(messaging.postback.payload);
+        // console.log('start process procesdure');
+        // console.log(messaging.postback.payload);
         var res = messaging.postback.payload.split(",");
            const sender = messaging.sender.id;
         console.log(res);
@@ -103,20 +103,14 @@ console.log(messaging);
             case 'startProcess':
                 FB.fbMessage(
                     sender,
-                    'The process'+res[1]+'has been inited:'
+                    'El Processo: '+res[1]+' sera iniciado.'
                 );
                 break;
             default:
 
         }
      
-        // const sessionId = findOrCreateSession(sender);
 
-
-        FB.fbMessage(
-            sender,
-            'The process has been inited:'
-        );
 
     }
 }
