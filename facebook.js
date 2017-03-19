@@ -49,7 +49,18 @@ const fbMessageReply = (id, text, payload, hasTpl) => {
   const body = JSON.stringify({
     recipient: { id },
     message: hasTpl ? text: { text },
-    quick_reply: {payload: payload}
+    quick_replies:[
+      {
+        "content_type":"text",
+        "title":"Yes",
+        "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_RED"
+      },
+      {
+        "content_type":"text",
+        "title":"NO",
+        "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_GREEN"
+      }
+    ]
   }); 
   const qs = 'access_token=' + encodeURIComponent(Config.FB_PAGE_TOKEN);
   return fetch('https://graph.facebook.com/me/messages?' + qs, {
