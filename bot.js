@@ -102,8 +102,8 @@ const actions = {
       var result = factory.getWeather(0, function(tpl){
          context.template = JSON.stringify(tpl);
       });
-      console.log('data');
-      console.log(context.template );
+      // console.log('data');
+      // console.log(context.template );
       return resolve(context);
     });
   },
@@ -114,11 +114,9 @@ const actions = {
       var ordinal = firstEntityValue(entities, 'ordinal');
       
       var result = factory.getProcessList(0, function(tpl){
-         context.template = JSON.stringify(tpl);
+         context.processList = JSON.stringify(tpl);
       });
       
-      console.log('data');
-      console.log(context.template );
       return resolve(context);
     });
   }
