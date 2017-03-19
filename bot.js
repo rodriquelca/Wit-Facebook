@@ -82,7 +82,7 @@ const actions = {
       var location = firstEntityValue(entities, 'location');
       if (location) {
         // context.forecast = 'sunny in ' + location; // we should call a weather API here
-        var result = factory.getWeather(0, function (resp) {
+        var result = factory.getWeather(location, function (resp) {
         // console.log(reps);
           // context.template = reps;
         });

@@ -27,8 +27,9 @@ const weatherServer = {
         cb();
     },
 
-    getForecast: function (cb) {
+    getForecast: function (location, cb) {
         console.log(this.url);
+        console.log('location: ' + location);
         weather.find({search: 'El Alto, BO', degreeType: 'C'}, function(err, result) {
 
             if(err) console.log(err);

@@ -14,13 +14,13 @@ const getWeather = (id, cb) => {
         /************** HERE WE CAN CONNECT *********+ */
         // console.log('test call');
         weatherServer.getForecast(function (res) {
-   console.log('respuesta del server');
-                // console.log(res);
+            console.log('respuesta del server');
+            res = JSON.parse(res);
             //     tpl = res;
-         
-            console.log(res[1].current.temperature);
+
+            // console.log(res[1].current.temperature);
             // tpl = processTpl(res);
-            cb(res[1].current.temperature + 'ºC');
+            cb(res[0].current.temperature + ' ºC');
         });
     });
 };
