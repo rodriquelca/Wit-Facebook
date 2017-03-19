@@ -29,7 +29,7 @@ var processTplList = (res) => {
     var process;
     for (let i = 0; i < res.length; i += 1) {
         process = res[i];
-        console.log('dasd');
+        console.log('testttttttttt');
         console.log(process);
         var payload = "startProcess,"+process.text+","+process.processId+","+ process.taskId+","+process.form[0].formID;
         console.log(payload);
