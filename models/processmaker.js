@@ -31,7 +31,7 @@ var processTplList = (res) => {
         process = res[i];
         console.log('testttttttttt');
         console.log(process);
-        var payload = "startProcess,"+process.text+","+process.processId+","+ process.taskId+","+process.forms[0].formID;
+        var payload = "startProcess,"+process.text+","+process.processId+","+ process.taskId+","+process.forms[0].formId;
         console.log(payload);
         elements.push(
             {
