@@ -91,9 +91,6 @@ const actions = {
         context.missingLocation = true;
         delete context.forecast;
       }
-      // Here should go the api call, e.g.:
-      // context.forecast = apiCall(context.loc)
-      // context.forecast = 'sunny';
       return resolve(context);
     });
 
