@@ -84,7 +84,7 @@ const actions = {
         // context.forecast = 'sunny in ' + location; // we should call a weather API here
         var result = factory.getWeather(0, function (resp) {
         // console.log(reps);
-          context.template = reps;
+          // context.template = reps;
         });
         delete context.missingLocation;
       } else {
