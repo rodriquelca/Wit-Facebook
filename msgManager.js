@@ -40,7 +40,7 @@ const findOrCreateSession = (fbid) => {
 
 const msgProcess = (req, res) => {
     // Parsing the Messenger API response
-    console.log('use webhook 6666');
+    // console.log('use webhook 6666');
     const messaging = FB.getFirstMessagingEntry(req.body);
     console.log(messaging);
     if (messaging && messaging.message) {
@@ -93,7 +93,7 @@ const msgProcess = (req, res) => {
                 }
             );
         }
-    } else if (messaging && messaging.postback.payload) {
+    } else if (messaging && messaging.postback && messaging.postback.payload) {
         // console.log('start process procesdure');
         // console.log(messaging.postback.payload);
         var res = messaging.postback.payload.split(",");
@@ -101,6 +101,7 @@ const msgProcess = (req, res) => {
         console.log(res);
         switch (res[0]) {
             case 'startProcess':
+               
                 FB.fbMessageReply(
                     sender,
                     'El Processo: ' + res[1] + ' sera iniciado.?',
@@ -121,6 +122,7 @@ const msgProcess = (req, res) => {
                     sender,
                     'Se inicio el proceso exitosamente gracias '
                 );
+
                 break;
             default:
 
