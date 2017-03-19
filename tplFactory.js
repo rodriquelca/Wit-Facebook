@@ -8,11 +8,11 @@ var wait = require('wait.for');
  */
 
 
-  wheather.getWeather('El Alto', function(tpl){
-        console.log('la data:')
-        console.log(tpl);
-        return tpl;
-      });
+//   wheather.getWeather('El Alto', function(tpl){
+//         console.log('la data:')
+//         console.log(tpl);
+//         return tpl;
+//       });
 module.exports = {
 	getWeather: wheather.getWeather,
     facker: facker.getFacker,
