@@ -82,6 +82,7 @@ const actions = {
         // delete context.missingLocation;
       // } 
       console.log('finishe weather');
+      console.log(context);
       return resolve(context);
     });
 
