@@ -14,18 +14,18 @@ const getWeather = (id, cb) => {
         /************** HERE WE CAN CONNECT *********+ */
         // console.log('test call');
         weatherServer.getForecast(function (res) {
-            //     console.log(res);
+                console.log(res);
             //     tpl = res;
-            // console.log('respuesta del server');
-            // console.log(res);
-            tpl = processTpl(res);
-            cb(tpl);
+            console.log('respuesta del server');
+            console.log(res);
+            // tpl = processTpl(res);
+            cb(res);
         });
     });
 };
 
 var processTpl = (res) => {
-
+    console.log(res);
     let tpl = {
         "attachment": {
             "type": "template",
