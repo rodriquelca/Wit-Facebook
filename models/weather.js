@@ -19,7 +19,7 @@ const getWeather = (id, cb) => {
             //     tpl = res;
             // console.log(res[1].current.temperature);
             // tpl = processTpl(res);
-            cb(res[0].current.temperature + ' ºC');
+            cb(res[0].current.temperature + '  grados');
         });
     });
 };
