@@ -53,12 +53,12 @@ const fbMessageReply = (id, text, payload, hasTpl) => {
       {
         "content_type":"text",
         "title":"Yes",
-        "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_RED"
+        "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_YES"
       },
       {
         "content_type":"text",
         "title":"NO",
-        "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_GREEN"
+        "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_NO"
       }
     ]
   }); 
