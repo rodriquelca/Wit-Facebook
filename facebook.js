@@ -84,5 +84,6 @@ const getFirstMessagingEntry = (body) => {
 module.exports = {
   getFirstMessagingEntry: getFirstMessagingEntry,
   fbMessage: fbMessage,
+  fbMessageReply: fbMessageReply,
   fbReq: fbReq
 };
