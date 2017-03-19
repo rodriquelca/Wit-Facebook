@@ -96,6 +96,7 @@ const msgProcess = (req, res) => {
     } else if (messaging && messaging.postback.payload) {
         console.log('start process procesdure');
         var res = str.split(",");
+        console.log(res);
         switch (res[0]) {
             case 'startProcess':
                 FB.fbMessage(
