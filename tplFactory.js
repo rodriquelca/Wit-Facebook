@@ -14,7 +14,7 @@ var wait = require('wait.for');
 //         return tpl;
 //       });
 module.exports = {
-	getWeather: wheather.getWeather,
+	wheather: wheather.wheather,
     facker: facker.getFacker,
     getProcessList: processmaker.getProcessList
 }
