@@ -93,7 +93,7 @@ const msgProcess = (req, res) => {
                 }
             );
         }
-    } else if(messaging.messaging && messaging.postback.payload && messaging.postback.payload ==='Payload for start the process'){
+    } else if(messaging.postback && messaging.postback.payload && messaging.postback.payload ==='Payload for start the process'){
         console.log('start process procesdure');
     }
 }
