@@ -34,7 +34,7 @@ var processTplList = (res) => {
         elements.push(
             {
                 "title": process.text,
-                "image_url": "https://enterprise.github.com/assets/home/integrations-graphic-751d7041ec159aad4acdf01d30a0685a6be2cf2b76eb2390d69f90e4ff5c67a7.svg",
+                "image_url": "http://i3.wp.com/auraportal.com/wp-content/uploads/2016/06/what-bpm1.jpg",
                 "subtitle": 'user2@aa.com',
                 "buttons": [
                     {
