@@ -77,7 +77,7 @@ const actions = {
         var result = factory.wheather(location, function (resp) {
           console.log('test');
           console.log(resp);
-          context.forecast = resp;
+          context.forecast = resp +' ' + location;
         });
         // delete context.missingLocation;
       // } 
