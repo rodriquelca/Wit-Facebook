@@ -15,7 +15,7 @@ const wheather = (config, id, cb) => {
         // console.log('test call');
         weatherServer.getForecast(id, function (res) {
             // console.log('respuesta del server');
-            res = JSON.parse(res);
+            // res = JSON.parse(res);
             //     tpl = res;
             // console.log(res[1].current.temperature);
             tpl = processTpl(res);
