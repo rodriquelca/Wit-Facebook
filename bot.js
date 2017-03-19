@@ -73,7 +73,7 @@ const actions = {
     return new Promise(function (resolve, reject) {
       var location = firstEntityValue(entities, 'location');
       // if (location) {
-           context.forecast = '17 grados en' + location; // we should call a weather API here
+          //  context.forecast = '17 grados en' + location; // we should call a weather API here
         var result = factory.wheather(location, function (resp) {
           context.forecast = JSON.stringify(resp);
         });
