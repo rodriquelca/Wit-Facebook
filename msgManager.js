@@ -42,7 +42,7 @@ const msgProcess = (req, res) => {
     // Parsing the Messenger API response
     console.log('use webhook 6666');
     const messaging = FB.getFirstMessagingEntry(req.body);
-console.log(messaging);
+    console.log(messaging);
     if (messaging && messaging.message) {
         // Yay! We got a new message!
 
@@ -97,19 +97,31 @@ console.log(messaging);
         // console.log('start process procesdure');
         // console.log(messaging.postback.payload);
         var res = messaging.postback.payload.split(",");
-           const sender = messaging.sender.id;
+        const sender = messaging.sender.id;
         console.log(res);
         switch (res[0]) {
             case 'startProcess':
                 FB.fbMessage(
                     sender,
-                    'El Processo: '+res[1]+' sera iniciado.'
+                    'El Processo: ' + res[1] + ' sera iniciado.'
+                );
+                FB.fbMessageReply(
+                    sender,
+                    'Excriba su nombre: ',
+                    'needResponseName'
+                );
+                break;
+            case 'needResponseName':
+                FB.fbMessageReply(
+                    sender,
+                    'Excriba su Test: ',
+                    'needResponseTest'
                 );
                 break;
             default:
 
         }
-     
+
 
 
     }
