@@ -40,6 +40,7 @@ const findOrCreateSession = (fbid) => {
 
 const msgProcess = (req, res) => {
     // Parsing the Messenger API response
+    console.log('use webhook 6666');
     const messaging = FB.getFirstMessagingEntry(req.body);
 
     if (messaging && messaging.message) {
