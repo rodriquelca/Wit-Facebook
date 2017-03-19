@@ -14,9 +14,10 @@ const getWeather = (id, cb) => {
         /************** HERE WE CAN CONNECT *********+ */
         // console.log('test call');
         weatherServer.getForecast(function (res) {
-                console.log(res);
+   console.log('respuesta del server');
+                console.log(res.typeof);
             //     tpl = res;
-            console.log('respuesta del server');
+         
             console.log(res[0].current + 'ºC');
             // tpl = processTpl(res);
             cb(res[0].current + 'ºC');
