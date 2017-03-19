@@ -10,14 +10,13 @@ const getWeather = (id, cb) => {
     var tpl;
     // console.log('asdas');
     // connecto to requiered services
-    weatherServer.connect(config, function (res) {
+    weatherServer.connect(id, function (res) {
         /************** HERE WE CAN CONNECT *********+ */
         // console.log('test call');
-        weatherServer.getForecast(function (res) {
-            console.log('respuesta del server');
+        weatherServer.getForecast(id, function (res) {
+            // console.log('respuesta del server');
             res = JSON.parse(res);
             //     tpl = res;
-
             // console.log(res[1].current.temperature);
             // tpl = processTpl(res);
             cb(res[0].current.temperature + ' ºC');
