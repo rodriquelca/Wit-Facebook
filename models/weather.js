@@ -6,7 +6,7 @@ config = require('../processmaker.json')
 /**
  * gets the weather
  */
-const getWeather = (id, cb) => {
+const wheather = (id, cb) => {
     var tpl;
     // console.log('asdas');
     // connecto to requiered services
@@ -26,5 +26,5 @@ const getWeather = (id, cb) => {
 
 
 module.exports = {
-    getWeather: getWeather
+    wheather: wheather
 };
