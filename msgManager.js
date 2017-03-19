@@ -101,15 +101,16 @@ const msgProcess = (req, res) => {
         console.log(res);
         switch (res[0]) {
             case 'startProcess':
-                FB.fbMessage(
-                    sender,
-                    'El Processo: ' + res[1] + ' sera iniciado.'
-                );
                 FB.fbMessageReply(
                     sender,
-                    'Excriba su nombre: ',
+                    'El Processo: ' + res[1] + ' sera iniciado.?'
                     'needResponseName'
                 );
+                // FB.fbMessageReply(
+                //     sender,
+                //     'Excriba su nombre: ',
+                //     'needResponseName'
+                // );
                 break;
             case 'needResponseName':
                 FB.fbMessageReply(
