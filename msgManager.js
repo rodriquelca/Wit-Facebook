@@ -93,6 +93,8 @@ const msgProcess = (req, res) => {
                 }
             );
         }
+    } else {
+        console.log(req);
     }
 }
 
