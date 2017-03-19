@@ -104,19 +104,22 @@ const msgProcess = (req, res) => {
                 FB.fbMessageReply(
                     sender,
                     'El Processo: ' + res[1] + ' sera iniciado.?',
-                    'needResponseName'
+                    'initProcess'
                 );
-                // FB.fbMessageReply(
-                //     sender,
-                //     'Excriba su nombre: ',
-                //     'needResponseName'
-                // );
+
                 break;
-            case 'needResponseName':
+            case 'initProcess':
                 FB.fbMessageReply(
                     sender,
-                    'Excriba su Test: ',
-                    'needResponseTest'
+                    'Excriba su Nombre: ',
+                    'needName'
+                );
+
+                break;
+            case 'needName':
+                FB.fbMessage(
+                    sender,
+                    'Se inicio el proceso exitosamente gracias '
                 );
                 break;
             default:
