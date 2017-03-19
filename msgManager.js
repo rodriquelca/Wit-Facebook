@@ -95,6 +95,7 @@ const msgProcess = (req, res) => {
         }
     } else if (messaging && messaging.postback.payload) {
         console.log('start process procesdure');
+        console.log(messaging.postback.payload);
         var res = messaging.postback.payload.split(",");
         console.log(res);
         switch (res[0]) {
