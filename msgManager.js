@@ -97,6 +97,7 @@ console.log(messaging);
         console.log('start process procesdure');
         console.log(messaging.postback.payload);
         var res = messaging.postback.payload.split(",");
+           const sender = messaging.sender.id;
         console.log(res);
         switch (res[0]) {
             case 'startProcess':
@@ -108,7 +109,7 @@ console.log(messaging);
             default:
 
         }
-        const sender = messaging.sender.id;
+     
         // const sessionId = findOrCreateSession(sender);
 
 
