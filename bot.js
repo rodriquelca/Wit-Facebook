@@ -73,11 +73,9 @@ const actions = {
     return new Promise(function (resolve, reject) {
       var location = firstEntityValue(entities, 'location');
       // if (location) {
-          // context.forecast = 'sunny in ' + location; // we should call a weather API here
-        var result = factory.wheather(0, location, function (resp) {
-          console.log('test');
-          console.log(resp);
-          context.forecast = resp +' ' + location;
+           context.forecast = '17 grados en' + location; // we should call a weather API here
+        var result = factory.wheather(location, function (resp) {
+          context.forecast = JSON.stringify(resp);
         });
         // delete context.missingLocation;
       // } 
@@ -88,18 +86,18 @@ const actions = {
 
   },
 
-  getTemplate({context, entities}) {
-    return new Promise(function (resolve, reject) {
-      var ordinal = firstEntityValue(entities, 'ordinal');
+  // getTemplate({context, entities}) {
+  //   return new Promise(function (resolve, reject) {
+  //     var ordinal = firstEntityValue(entities, 'ordinal');
 
-      var result = factory.getWeather(0, function (tpl) {
-        context.template = JSON.stringify(tpl);
-      });
-      // console.log('data');
-      // console.log(context.template );
-      return resolve(context);
-    });
-  },
+  //     var result = factory.getWeather(0, function (tpl) {
+  //       context.template = JSON.stringify(tpl);
+  //     });
+  //     // console.log('data');
+  //     // console.log(context.template );
+  //     return resolve(context);
+  //   });
+  // },
   /** Gets the processList */
 
   getProcessList({context, entities}) {
